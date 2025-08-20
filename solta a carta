@@ -1,0 +1,50 @@
+import random
+import time
+
+numero_sorte = 777  # número que representa a "sorte" (para ganhar)
+numero_proibido = 777  # único número que NUNCA será sorteado
+moedas = 0  # sistema de moedas
+
+print("🎰 🎲Bem-vindo ao Fortune tiger! 🎲🐯")
+print("Para jogar, você precisa inserir uma moeda.")
+
+while True:
+    try:
+        comando = input("Digite '1'💰🤑 para inserir uma moeda ou 'sair' para encerrar: ")
+        
+        if comando.lower() == 'sair':
+            print("Obrigado por jogar! Até mais! 🐯")
+            break
+        elif comando == '1':
+            moedas += 1
+            print(f"Moeda inserida! Total de moedas: {moedas}")
+            
+            # Timer de 5 segundos
+            print("🎯 Girando...")
+            for i in range(5, 0, -1):
+                print(f"{i}...")
+                time.sleep(1)
+
+            # Sorteia o número, mas nunca o 777
+            while True:
+                numero_sorteado = random.randint(1, 1000)
+                if numero_sorteado != numero_proibido:
+                    break
+
+            print(f"O número sorteado foi: {numero_sorteado}")
+
+            if numero_sorteado == numero_sorte:
+                print("🎉 UAU! Você acertou o número secreto!")
+                print("🏆 PARABÉNS! Você ganhou o grande prêmio!")
+            else:
+                print("Seu dinheiro é meu kkkkkkk🐯")
+                
+            moedas -= 1  # Gasta uma moeda
+            print(f"Moedas restantes: {moedas}")
+            
+        else:
+            print("Comando inválido! Digite '1' para inserir uma moeda ou 'sair' para encerrar.")
+            
+    except KeyboardInterrupt:
+        print("\n\nObrigado por jogar! Até mais! 🐯")
+        break
