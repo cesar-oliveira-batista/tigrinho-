@@ -34,7 +34,7 @@ while True:
             print(f"O número sorteado foi: {numero_sorteado}")
 
             if numero_sorteado == numero_sorte:
-                print("🎉 UAU! Você acertou o número secreto!")
+                print("🎉 UAU! Você ganhou!")
                 print("🏆 PARABÉNS! Você ganhou o grande prêmio!")
             else:
                 print("Seu dinheiro é meu kkkkkkk🐯")
